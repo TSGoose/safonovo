@@ -1,0 +1,42 @@
+@font-face {
+	font-family: 'Alegreya';
+	src: url('Alegreya-Regular.woff2');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Alegreya';
+	src: url('Alegreya-Italic.woff2');
+	font-weight: 400;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Alegreya';
+	src: url('Alegreya-Medium.woff2');
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Alegreya';
+	src: url('Alegreya-MediumItalic.woff2');
+	font-weight: 500;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Alegreya';
+	src: url('Alegreya-SemiBold.woff2');
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Alegreya';
+	src: url('Alegreya-Bold.woff2');
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Alegreya';
+	src: url('Alegreya-ExtraBold.woff2');
+	font-weight: 800;
+	font-style: normal;
+}
