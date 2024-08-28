@@ -239,7 +239,7 @@
                             </div>
 
                             <div class="relative w-fit">
-                                <img src="{{asset("/img/production/img2.png")}}" draggable="false" loading="lazy" alt="">
+                                <img src="{{asset("/img/products/img2.png")}}" draggable="false" loading="lazy" alt="">
                                 <div class="w-[85%] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
                                     <div class="about-card">
                                         <div class="text-center">
