@@ -53,7 +53,7 @@
                                             и фруктами.</p>
                                     </div>
                                 </div>
-                                <a href="/src/routes/product.html" class="button !flex px-5 lg:px-10">
+                                <a href="/products/1" class="button !flex px-5 lg:px-10">
                                     <p>Купить</p>
                                 </a>
                             </div>
@@ -84,7 +84,7 @@
                                             с ягодными конфитюрами. </p>
                                     </div>
                                 </div>
-                                <a href="/src/routes/product.html" class="button !flex px-5 lg:px-10">
+                                <a href="/products/2" class="button !flex px-5 lg:px-10">
                                     <p>Купить</p>
                                 </a>
                             </div>
@@ -117,7 +117,7 @@
 
 
                                 </div>
-                                <a href="/src/routes/product.html" class="button !flex px-5 lg:px-10">
+                                <a href="/products/3" class="button !flex px-5 lg:px-10">
                                     <p>Купить</p>
                                 </a>
                             </div>
@@ -160,7 +160,7 @@
                                             красным вином и хересом. </p>
                                     </div>
                                 </div>
-                                <a href="/src/routes/product.html" class="button !flex px-5 lg:px-10">
+                                <a href="/products/4" class="button !flex px-5 lg:px-10">
                                     <p>Купить</p>
                                 </a>
                             </div>
@@ -191,7 +191,7 @@
                                             и грушей.</p>
                                     </div>
                                 </div>
-                                <a href="/src/routes/product.html" class="button !flex px-5 lg:px-10">
+                                <a href="/products/5" class="button !flex px-5 lg:px-10">
                                     <p>Купить</p>
                                 </a>
                             </div>
@@ -220,7 +220,7 @@
                                         </p>
                                     </div>
                                 </div>
-                                <a href="/src/routes/product.html" class="button !flex px-5 lg:px-10">
+                                <a href="/products/6" class="button !flex px-5 lg:px-10">
                                     <p>Купить</p>
                                 </a>
                             </div>

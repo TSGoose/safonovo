@@ -1,6 +1,6 @@
 import "./bootstrap";
-import Toastify from "toastify-js";
-import "toastify-js/src/toastify.css";
+// import Toastify from "toastify-js";
+// import "toastify-js/src/toastify.css";
 
 import { Modal, Ripple, initTWE } from "tw-elements";
 initTWE({ Modal, Ripple });
@@ -37,6 +37,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+function setUnderLine() {
+    var tab = document.querySelector('.tab-link.active');
+    var line = document.querySelector('.underline');
+    if (!line) {
+        return;
+    }
+    line.style.width = tab.offsetWidth + "px";
+    line.style.left = tab.offsetLeft + "px";
+    line.style.top = tab.offsetHeight + "px";
+}
 
 // Menu toggle functionality
 const menu = document.querySelector('.nav');
@@ -119,4 +129,103 @@ function adjustHeroHeight() {
 
 window.addEventListener('load', adjustHeroHeight);
 window.addEventListener('resize', adjustHeroHeight);
+
+$(document).ready(function () {
+
+    setUnderLine();
+    $(window).on("resize", function () {
+        setUnderLine();
+    });
+
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.tab-link');
+    const pins = document.querySelectorAll('.pin');
+    const line = document.querySelector('.underline');
+    const contents = document.querySelectorAll('.tab-content');
+    let activeTab = null;
+
+    function setActive(elements, activeElement) {
+        elements.forEach(element => element.classList.remove('active'));
+        if (activeElement) {
+            activeElement.classList.add('active');
+        }
+    }
+
+    function updateLinePosition(element) {
+        if (element) {
+            line.style.width = element.offsetWidth + "px";
+            line.style.left = element.offsetLeft + "px";
+            line.style.top = element.offsetHeight + "px";
+        } else {
+            line.style.width = 0;
+        }
+    }
+
+    function hideContent() {
+        setActive(tabs, null);
+        setActive(pins, null);
+        setActive(contents, null);
+        updateLinePosition(null);
+        activeTab = null;
+    }
+
+    function toggleContent(tab, index) {
+        if (activeTab === tab) {
+            hideContent();
+        } else {
+            setActive(tabs, tab);
+            updateLinePosition(tab);
+
+            const linkClass = tab.classList[1];
+            const pin = document.querySelector(`.pin.${linkClass}`);
+            setActive(pins, pin);
+            setActive(contents, contents[index]);
+            activeTab = tab;
+        }
+    }
+
+    tabs.forEach((tab, index) => {
+        tab.addEventListener('click', (e) => {
+            toggleContent(tab, index);
+        });
+    });
+
+    pins.forEach(pin => {
+        pin.addEventListener('mouseover', () => {
+            const pinClass = pin.classList[1];
+            const tabLink = document.querySelector(`.tab-link.${pinClass}`);
+            const index = Array.from(tabs).indexOf(tabLink);
+
+            setActive(tabs, tabLink);
+            setActive(pins, pin);
+            setActive(contents, contents[index]);
+            updateLinePosition(tabLink);
+            activeTab = tabLink;
+        });
+    });
+
+});
+
+
+const swiper = new Swiper('.product_swiper', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    allowTouchMove: true,
+    autoplay: {
+        delay: 3000,
+    },
+    breakpoints: {
+        768: {
+            slidesPerView: 1.5,
+            spaceBetween: 50,
+        }
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+});
 

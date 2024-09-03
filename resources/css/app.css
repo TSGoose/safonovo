@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @font-face {
     font-family: 'Alegreya';
     src: url('../fonts/Alegreya-Regular.woff2');
@@ -202,7 +203,7 @@ img{
 }
 
 
-h1 {
+h1{
     font-style: italic;
     font-weight: 500;
     font-size: clamp(30px, 3.12vw, 60px);
@@ -211,6 +212,26 @@ h1 {
     letter-spacing: 0.03em;
     color: var(--color-dark-primary);
 }
+.product-price {
+    font-style: italic;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    font-size: clamp(30px, 3.12vw, 60px);
+    color: var(--color-dark-primary);
+}
+
+.product-price-desc{
+    font-size: clamp(16px, 1.25vw, 24px);
+    color: var(--color-gray);
+}
+
+.prop-name{
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(20px, 2.08vw, 40px);
+    color: var(--color-dark-primary);
+}
+
 
 h2 {
     display: inline-block;
@@ -288,7 +309,7 @@ header {
     background: var(---linear-gradient-header);
 }
 
-.galery_swiper {
+.galery_swiper, .product_swiper {
     overflow: visible !important;
 }
 
@@ -393,6 +414,9 @@ section.products-page {
     background: left -275px / cover no-repeat url(/public/img/products/page/background.png);
 }
 
+section.product-page {
+    background: top / cover no-repeat url(/public/img/product/background.png);
+}
 
 section.get-product {
     overflow: visible;
@@ -608,6 +632,50 @@ footer a {
     :root {
         --borde-width: 4px;
     }
+}
+
+
+
+.tab-list {
+    position: relative;
+    display: flex;
+    width: max-content;
+    gap: clamp(20px, 2.6vw, 50px);
+    border-bottom: 2px solid var(--color-gray);
+}
+
+
+.tab-list .tab-link {
+    padding-bottom:  clamp(0px, 0.31vw, 6px);
+    font-size: clamp(20px, 3.12vw, 60px);
+    border: none;
+    color: var(--color-gray);
+    cursor: pointer;
+}
+
+.tab-list .tab-link.active {
+    color: var(--color-dark-primary);
+    font-weight: 700;
+}
+
+.underline {
+    position: absolute;
+    height: 2px;
+    background-color: var(--color-dark-primary);
+    transition: all .3s ease-in-out;
+}
+
+.content-box{
+    padding-top: 32px;
+    text-align: start;
+}
+.content-box .tab-content {
+    display: none;
+}
+
+.content-box .tab-content.active {
+    display: block;
+
 }
 
 

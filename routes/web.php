@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProductionController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\AboutController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,8 +18,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [IndexController::class, 'index'])->name('home');
-Route::get('/products/', [ProductController::class, 'show'])->name('product.show');
+Route::get('/products/', [ProductsController::class, 'show'])->name('product.show');
 Route::get('/about/', [AboutController::class, 'show'])->name('about.show');
 Route::get('/production/', [ProductionController::class, 'show'])->name('production.show');
-//Route::get('/products/{code}/{slug}', [ProductController::class, 'show'])->name('product.show');
+Route::get('/products/{code}/', [ProductsController::class, 'showOne'])->name('product.showOne');
 //Route::get('/production/{slug}', [ProductionController::class, 'show'])->name('article.show');
