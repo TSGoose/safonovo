@@ -34,30 +34,36 @@
                             <div class="swiper product_swiper">
                                 <div class="swiper-wrapper">
                                     <!-- slide 1 -->
+                                    @isset($product->images[0])
                                     <div class="swiper-slide">
                                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
                                             <div class="lg:col-span-2">
                                                 <div class="outer-border">
-                                                    <img src="{{asset("/img/product/gallery/img1.png")}}"
+                                                    <img src="{{asset('storage/' . $product->images[0])}}"
                                                          class="w-full h-full object-cover">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- slide 2 -->
-                                    <div class="swiper-slide">
-                                        <div class="outer-border">
-                                            <img src="{{asset("/img/product/gallery/img2.png")}}"
-                                                 class="w-full h-full object-cover">
+                                    @endisset
+                                    @isset($product->images[1])
+                                        <!-- slide 2 -->
+                                        <div class="swiper-slide">
+                                            <div class="outer-border">
+                                                <img src="{{asset('storage/' . $product->images[1])}}"
+                                                     class="w-full h-full object-cover">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <!-- slide 3 -->
-                                    <div class="swiper-slide">
-                                        <div class="outer-border">
-                                            <img src="{{asset("/img/product/gallery/img3.png")}}"
-                                                 class="w-full h-full object-cover">
+                                    @endisset
+                                    @isset($product->images[2])
+                                        <!-- slide 3 -->
+                                        <div class="swiper-slide">
+                                            <div class="outer-border">
+                                                <img src="{{asset('storage/' . $product->images[2])}}"
+                                                     class="w-full h-full object-cover">
+                                            </div>
                                         </div>
-                                    </div>
+                                    @endisset
                                 </div>
                                 <div class="swiper-button-next"></div>
                                 <div class="swiper-button-prev"></div>
@@ -65,58 +71,65 @@
                         </div>
 
                         <div class="grid-cols-1 lg:grid-cols-2 gap-4 hidden lg:grid">
-                            <div class="lg:col-span-2">
-                                <div class="outer-border">
-                                    <img src="{{asset("/img/product/gallery/img1.png")}}" class="w-full h-full object-cover">
-                                </div>
-                            </div>
-                            <div class="outer-border">
-                                <img src="{{asset("/img/product/gallery/img2.png")}}" class="w-full h-full object-cover">
-                            </div>
-                            <div class="outer-border">
-                                <img src="{{asset("/img/product/gallery/img3.png")}}" class="w-full h-full object-cover">
-                            </div>
-                        </div>
-
-                        <div class="flex w-full max-w-[905px] flex-col gap-4 lg:gap-8">
-                            <div>
-                                <div class="flex justify-between w-full items-center">
-                                    <h1>Сыр “Каприно”</h1>
-                                    <img class="max-h-24" src="{{asset("/img/products/page/logo1.png")}}" alt="">
-                                </div>
-                                <div class="flex justify-between w-full items-end">
-                                    <div class="text-start">
-                                        <p class="product-price">560₽</p>
-                                        <p class="product-price-desc">Цена за 100г.</p>
+                            @isset($product->images[0])
+                                <div class="lg:col-span-2">
+                                    <div class="outer-border">
+                                        <img src="{{asset('storage/' . $product->images[0])}}" class="w-full h-full object-cover">
                                     </div>
-                                    <a type="submit" href="/products" class="button !flex px-5 lg:px-14 max-h-20 ">
-                                        <p>Заказать</p>
-                                    </a>
                                 </div>
-                            </div>
-                            <div class="flex flex-col gap-2 text-start">
-                                <div>
-                                    <p class="prop-name">Тип молока:</p>
-                                    <p>цельное козье молоко</p>
+                            @endisset
+                            @isset($product->images[1])
+                                <div class="outer-border">
+                                    <img src="{{asset('storage/' . $product->images[1])}}" class="w-full h-full object-cover">
                                 </div>
-                                <div>
-                                    <p class="prop-name">Твердость:</p>
-                                    <p>твердый</p>
+                            @endisset
+                            @isset($product->images[2])
+                                <div class="outer-border">
+                                    <img src="{{asset('storage/' . $product->images[2])}}" class="w-full h-full object-cover">
                                 </div>
-                                <div>
-                                    <p class="prop-name">Плесень:</p>
-                                    <p>мытая корка</p>
-                                </div>
-                                <div>
-                                    <p class="prop-name">Вкус:</p>
-                                    <p>солоноватый, легкая кислинка</p>
-                                </div>
-                                <div>
-                                    <p class="prop-name">Выдержка:</p>
-                                    <p>3 месяца</p>
-                                </div>
-                            </div>
+                            @endisset
                         </div>
+                        @isset($product)
+                            <div class="flex w-full max-w-[905px] flex-col gap-4 lg:gap-8">
+                                <div>
+                                    <div class="flex justify-between w-full items-center">
+                                        <h1>{{$product->name}}</h1>
+                                        <img class="max-h-24" src="{{asset("/img/products/page/logo1.png")}}" alt="">
+                                    </div>
+                                    <div class="flex justify-between w-full items-end">
+                                        <div class="text-start">
+                                            <p class="product-price">560₽</p>
+                                            <p class="product-price-desc">Цена за 100г.</p>
+                                        </div>
+                                        <a type="submit" href="/products" class="button !flex px-5 lg:px-14 max-h-20 ">
+                                            <p>Заказать</p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-2 text-start">
+                                    <div>
+                                        <p class="prop-name">Тип молока:</p>
+                                        <p>{{$product->milk}}</p>
+                                    </div>
+                                    <div>
+                                        <p class="prop-name">Твердость:</p>
+                                        <p>{{$product->hardness}}</p>
+                                    </div>
+                                    <div>
+                                        <p class="prop-name">Плесень:</p>
+                                        <p>{{$product->mold}}</p>
+                                    </div>
+                                    <div>
+                                        <p class="prop-name">Вкус:</p>
+                                        <p>{{$product->flavor}}</p>
+                                    </div>
+                                    <div>
+                                        <p class="prop-name">Выдержка:</p>
+                                        <p>{{$product->tenacity}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        @endisset
                     </div>
 
                     <div>
@@ -134,23 +147,15 @@
                         <div class="content-box">
                             <div class="tab-content active">
                                 <p>
-                                    «Каприно» - пикантный твердый сыр из цельного козьего молока. Созревание может
-                                    занимать
-                                    от 3 до 12 месяцев в зависимости от желаемой крепости и интенсивности вкуса. В
-                                    процессе
-                                    выдержки на поверхности сыра образуется твердая, слегка шероховатая корочка в
-                                    светло-желтых или коричневых оттенках. Зрелый «Каприно» отличается пикантностью,
-                                    легкой
-                                    кислинкой и солоноватой гаммой вкусов. Структура сыра плотная, но достаточно
-                                    пластичная.
-                                    Цвет варьируется от кремового до медово-желтого.
-
+                                    {!! $product->description !!}
                                 </p>
 
                             </div>
 
                             <div class="tab-content">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, non ut. Accusantium deserunt repudiandae totam consectetur excepturi, corrupti libero sit temporibus, optio, laudantium modi vero error esse voluptatem nihil aliquam.</p>
+                                <p>
+                                    {!! $product->recommendations !!}
+                                </p>
                             </div>
                         </div>
 
